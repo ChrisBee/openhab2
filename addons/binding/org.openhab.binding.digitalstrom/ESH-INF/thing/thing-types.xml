@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="digitalstrom"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <!-- Light Thing Type -->
+    <thing-type id="light-dimmable">
+       <supported-bridge-type-refs>
+            <bridge-type-ref id="dss" />
+        </supported-bridge-type-refs>
+        
+        <label>Dimmable Light</label>
+        <description>A light that is dimmable.</description>
+
+        <channels>
+            <channel id="brightness" typeId="brightness"/>
+        </channels>
+    </thing-type>
+
+    <!-- Brightness Channel Type -->
+    <channel-type id="brightness">
+        <item-type>Dimmer</item-type>
+        <label>Brightness</label>
+        <description>Set or get the current brightness.</description>
+        <category>DimmableLight</category>
+    </channel-type>
+
+</thing:thing-descriptions>
